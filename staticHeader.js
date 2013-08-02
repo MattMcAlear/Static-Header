@@ -21,6 +21,10 @@ makeStaticHeader.prototype = {
 	        }else{
 		        that._header.style.display = 'none';
 	        }
+	        
+	        $('#staticHead').css({
+		        'top': $(this).scrollTop()
+		    });
 	    };
 	},
 	
@@ -30,12 +34,13 @@ makeStaticHeader.prototype = {
 	    var body=document.getElementsByTagName('body')[0];
 		var table=document.createElement('table');
 		table.style.width=w+'px';
-		table.style.position='fixed';
+		table.style.position='absolute';
 		table.style.top='0px';
 		table.style.display='none';
 		table.style.opacity=.75;
 		table.style.backgroundColor='#888';
 		table.style.color='white';
+		table.style.overflowX='auto';
 		table.setAttribute('border','1');
 		table.setAttribute('id', 'staticHead');
 		
